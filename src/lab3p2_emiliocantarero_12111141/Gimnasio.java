@@ -1,14 +1,76 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package lab3p2_emiliocantarero_12111141;
 
-/**
- *
- * @author Emilio Cantarero
- */
+
 public class Gimnasio {
+    private String ciudad, nombre, lider;
+    private int victorias=0, derrotas=0, dinero;
+
+    public Gimnasio() {
+    }
+
+    public Gimnasio(String ciudad, String nombre, String lider, int dinero) {
+        this.ciudad = ciudad;
+        this.nombre = nombre;
+        this.lider = lider;
+        this.dinero = dinero;
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getLider() {
+        return lider;
+    }
+
+    public void setLider(String lider) {
+        this.lider = lider;
+    }
+
+    public int getVictorias() {
+        return victorias;
+    }
+
+    public void setVictorias(int victorias) {
+        this.victorias = victorias;
+    }
+
+    public int getDerrotas() {
+        return derrotas;
+    }
+
+    public void setDerrotas(int derrotas) {
+        this.derrotas = derrotas;
+    }
+
+    public int getDinero() {
+        return dinero;
+    }
+
+    public void setDinero(int dinero) {
+        if (dinero>=10000 && dinero <=50000){
+            this.dinero = dinero;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Gimnasio{" + "ciudad=" + ciudad + ", nombre=" + nombre + ", lider=" + lider + ", victorias=" + victorias + ", derrotas=" + derrotas + ", dinero=" + dinero + '}';
+    }
+    
+    
+    
     
 }
