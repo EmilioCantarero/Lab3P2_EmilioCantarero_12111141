@@ -8,12 +8,18 @@ public class Lab3P2_EmilioCantarero_12111141 {
     public static void main(String[] args) {
         
         int opcion=0;
-        while (opcion!=5){
+        while (opcion!=6){
             opcion=menu();
             if (opcion==1){
                 crearGimnasio();
             }else if(opcion==2){
                 asignarEntrenadores();
+            }else if(opcion==3){
+                modificarGimnasio();
+            }else if(opcion==4){
+                eliminarGim();
+            }else if(opcion==5){
+                listar();
             }
         }
     }
@@ -23,21 +29,24 @@ public class Lab3P2_EmilioCantarero_12111141 {
             opcion=Integer.parseInt(JOptionPane.showInputDialog
             ("1- Crear Gimnasio\n"+
             "2- Agregar entrenador\n"+
-            "3- Asignar mascota a cliente\n"+
-            "4- Generar reporte\n"+
-            "5- Salir"));
+            "3- Modificar Gimnasio\n"+
+            "4- Eliminar Gimnasio\n"+
+            "5- Listar Gimnasios\n"+
+            "6- Salir"));
         return opcion;
     }
-    public static void crearGimnasio(){
+    public static Gimnasio crearGimnasio(){
         String n, c;
         int d;
 
         n=JOptionPane.showInputDialog("Nombre");
         c=JOptionPane.showInputDialog("Ciudad");
-        d=Integer.parseInt(JOptionPane.showInputDialog("Dinero(Valor entre 10, 000 y 50, 000)"));
-        gimnasios.add(new Gimnasio(c, n, crearLider(), d));
+        d=Integer.parseInt(JOptionPane.showInputDialog("Dinero(Valor entre 10, 000 y 100, 000)"));
+        Gimnasio g=new Gimnasio(c, n, crearLider(), d);
+        gimnasios.add(g);
         
         JOptionPane.showMessageDialog(null, "Gimnasio agregado correctamente");
+        return g;
     }
     public static MaestroPokemon crearLider(){
         String n;
@@ -46,7 +55,7 @@ public class Lab3P2_EmilioCantarero_12111141 {
         JOptionPane.showMessageDialog(null, "Asignacion del lider de Gimnasio");
         n=JOptionPane.showInputDialog("Nombre");
         e=Integer.parseInt(JOptionPane.showInputDialog("edad"));
-        s=JOptionPane.showInputDialog("Masculino/Femenino");
+        s=JOptionPane.showInputDialog("M/F");
         numeroVictorias=Integer.parseInt(JOptionPane.showInputDialog("Numero de victorias"));
         MaestroPokemon lider=new MaestroPokemon (numeroVictorias, crearPokemon(), n, e, s);
         return lider;
@@ -163,5 +172,27 @@ public class Lab3P2_EmilioCantarero_12111141 {
         }else{
             JOptionPane.showMessageDialog(null,"Ya alcanzó el limite de entrenadores para este gimnasio");
         }
+    }
+    
+    public static void modificarGimnasio(){
+        int opc=Integer.parseInt(JOptionPane.showInputDialog("Posicion del gimnasio que desea modificar"));
+        gimnasios.set(opc, crearGimnasio());
+        JOptionPane.showMessageDialog(null,"Ha modificado completamente este gimnasio");
+    }
+    
+    public static void eliminarGim(){
+        int opc=Integer.parseInt(JOptionPane.showInputDialog("Posicion del gimnasio que desea Eliminar"));
+        gimnasios.remove(opc);
+        JOptionPane.showMessageDialog(null,"Ha eliminado este gimnasio");
+    }
+    public static void listar(){
+        for (int i=0; i<gimnasios.size(); i++){
+            JOptionPane.showMessageDialog(null,gimnasios.get(i));
+        }
+    }
+    
+    public static void batallaPokemon(){
+        int opc=Integer.parseInt(JOptionPane.showInputDialog("Posicion del primer gimnasio que luchará"));
+        int opc2=Integer.parseInt(JOptionPane.showInputDialog("Posicion del segundo gimnasio que luchará"));
     }
 }
