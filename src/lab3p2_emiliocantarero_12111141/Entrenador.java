@@ -4,9 +4,9 @@ package lab3p2_emiliocantarero_12111141;
 public class Entrenador {
     private String nombre;
     private int edad;
-    private boolean sexo;
+    private String sexo;
 
-    public Entrenador(String nombre, int edad, boolean sexo) {
+    public Entrenador(String nombre, int edad, String sexo) {
         this.nombre = nombre;
         this.edad = edad;
         this.sexo = sexo;
@@ -31,11 +31,11 @@ public class Entrenador {
         this.edad = edad;
     }
 
-    public boolean isSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(boolean sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 

@@ -1,14 +1,17 @@
 package lab3p2_emiliocantarero_12111141;
 
+import java.util.ArrayList;
+
 
 public class Gimnasio {
-    private String ciudad, nombre, lider;
+    private String ciudad, nombre;
+    private MaestroPokemon lider;
     private int victorias=0, derrotas=0, dinero;
-
+    ArrayList<Entrenador> entrenadores=new ArrayList();
     public Gimnasio() {
     }
 
-    public Gimnasio(String ciudad, String nombre, String lider, int dinero) {
+    public Gimnasio(String nombre, String ciudad, MaestroPokemon lider, int dinero) {
         this.ciudad = ciudad;
         this.nombre = nombre;
         this.lider = lider;
@@ -31,11 +34,11 @@ public class Gimnasio {
         this.nombre = nombre;
     }
 
-    public String getLider() {
+    public MaestroPokemon getLider() {
         return lider;
     }
 
-    public void setLider(String lider) {
+    public void setLider(MaestroPokemon lider) {
         this.lider = lider;
     }
 
@@ -65,12 +68,23 @@ public class Gimnasio {
         }
     }
 
+    public ArrayList<Entrenador> getEntrenadores() {
+        return entrenadores;
+    }
+
+    public void setEntrenadores(ArrayList<Entrenador> entrenadores) {
+        this.entrenadores = entrenadores;
+    }
+
+        
     @Override
     public String toString() {
         return "Gimnasio{" + "ciudad=" + ciudad + ", nombre=" + nombre + ", lider=" + lider + ", victorias=" + victorias + ", derrotas=" + derrotas + ", dinero=" + dinero + '}';
     }
     
-    
+    public void agregarEntrenador(Entrenador e){
+        entrenadores.add(e);
+    }
     
     
 }

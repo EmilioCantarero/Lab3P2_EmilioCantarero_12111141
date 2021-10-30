@@ -10,7 +10,7 @@ public class EntrenadorNovato extends Entrenador {
         super();
     }
 
-    public EntrenadorNovato(int pDescubiertos, Pokemon p1, String nombre, int edad, boolean sexo) {
+    public EntrenadorNovato(int pDescubiertos, Pokemon p1, String nombre, int edad, String sexo) {
         super(nombre, edad, sexo);
         this.pDescubiertos = pDescubiertos;
         this.p1 = p1;

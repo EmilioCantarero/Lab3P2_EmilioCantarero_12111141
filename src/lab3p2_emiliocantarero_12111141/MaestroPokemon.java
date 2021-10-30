@@ -9,7 +9,7 @@ public class MaestroPokemon extends Entrenador {
         super();
     }
 
-    public MaestroPokemon(int numeroVictorias, Pokemon p1, String nombre, int edad, boolean sexo) {
+    public MaestroPokemon(int numeroVictorias, Pokemon p1, String nombre, int edad, String sexo) {
         super(nombre, edad, sexo);
         this.numeroVictorias = numeroVictorias;
         this.p1 = p1;

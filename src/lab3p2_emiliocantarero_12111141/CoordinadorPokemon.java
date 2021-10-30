@@ -10,7 +10,7 @@ public class CoordinadorPokemon extends Entrenador{
         super();
     }
 
-    public CoordinadorPokemon(String nombre, int edad, boolean sexo) {
+    public CoordinadorPokemon(String nombre, int edad, String sexo) {
         super(nombre, edad, sexo);
     }
 
@@ -27,6 +27,8 @@ public class CoordinadorPokemon extends Entrenador{
         return super.toString() + "CoordinadorPokemon{" + "lista=" + lista + '}';
     }
     
-    
+    public void agregarPokemon(Pokemon p1){
+        lista.add(p1);
+    }
     
 }
